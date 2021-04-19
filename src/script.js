@@ -124,6 +124,8 @@ const parameters = {
   vPeriode: 1,
   activateRound: true,
   activateVerticale: false,
+  activateHorizontalX: true,
+  activateHorizontalZ: true,
   vAbs: false,
   hAbs: false,
 };
@@ -135,6 +137,8 @@ gui.add(parameters, 'dephassage', 0, 10, 0.01).name('Dephassage general');
 gui.add(parameters, 'valeurMediane', -10, 10, 0.01).name('Valeurmédiane general');
 gui.add(parameters, 'activateRound').name('Activé la rotation');
 gui.add(parameters, 'activateVerticale').name('Activé la bond verticale');
+gui.add(parameters, 'activateHorizontalX').name('Activé la rotation X');
+gui.add(parameters, 'activateHorizontalZ').name('Activé la rotation Z');
 gui.add(parameters, 'vAbs').name('ABS: vertical');
 gui.add(parameters, 'hAbs').name('ABS: horizontal');
 /**
@@ -156,13 +160,19 @@ const tick = () => {
     hAbs,
     vPeriode,
     vAmplitude,
+    activateHorizontalX,
+    activateHorizontalZ,
   } = parameters;
 
   if (activateRound) {
-    cube.position.x =
-      hAmplitude * Math.cos(hPeriode * elapsedTime + dephassage) + valeurMediane;
-    cube.position.z =
-      hAmplitude * Math.sin(hPeriode * elapsedTime + dephassage) + valeurMediane;
+    if (activateHorizontalX) {
+      cube.position.x =
+        hAmplitude * Math.cos(hPeriode * elapsedTime + dephassage) + valeurMediane;
+    }
+    if (activateHorizontalZ) {
+      cube.position.z =
+        hAmplitude * Math.sin(hPeriode * elapsedTime + dephassage) + valeurMediane;
+    }
     if (hAbs) {
       cube.position.z = Math.abs(cube.position.z);
       cube.position.x = Math.abs(cube.position.x);
