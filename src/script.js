@@ -2,17 +2,22 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
+import colorTexture from './img/textures/metaltrim/color.jpg';
+import heightTexture from './img/textures/metaltrim/height.png';
+import normalTexture from './img/textures/metaltrim/normal.jpg';
+import roughnessTexture from './img/textures/metaltrim/roughness.jpg';
+import metallicTexture from './img/textures/metaltrim/metallic.jpg';
+import opacityTexture from './img/textures/metaltrim/opacity.jpg';
+import aoTexture from './img/textures/metaltrim/ambientOcclusion.jpg';
 
 const textureLoader = new THREE.TextureLoader();
-const metaltrimColor = textureLoader.load('/textures/metaltrim/color.jpg');
-const metaltrimHeight = textureLoader.load('/textures/metaltrim/height.png');
-const metaltrimNormal = textureLoader.load('/textures/metaltrim/normal.jpg');
-const metaltrimRougness = textureLoader.load('/textures/metaltrim/roughness.jpg');
-const metaltrimMetalness = textureLoader.load('/textures/metaltrim/metallic.jpg');
-const metaltrimAlpha = textureLoader.load('/textures/metaltrim/opacity.jpg');
-const metaltrimAmbientOcclusion = textureLoader.load(
-  '/textures/metaltrim/ambientOcclusion.jpg'
-);
+const metaltrimColor = textureLoader.load(colorTexture);
+const metaltrimHeight = textureLoader.load(heightTexture);
+const metaltrimNormal = textureLoader.load(normalTexture);
+const metaltrimRougness = textureLoader.load(roughnessTexture);
+const metaltrimMetalness = textureLoader.load(metallicTexture);
+const metaltrimAlpha = textureLoader.load(opacityTexture);
+const metaltrimAmbientOcclusion = textureLoader.load(aoTexture);
 
 const gui = new dat.GUI();
 gui.width = 400;
