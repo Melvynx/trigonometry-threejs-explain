@@ -1,6 +1,6 @@
 # Three.js
 
-Frensh exemple of trigonometry.
+French exemple of trigonometry.
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
@@ -16,3 +16,4 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
+ThreeJs bootstraped from the [threejs journey](threejs-journey.xyz/).
