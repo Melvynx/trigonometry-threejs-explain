@@ -16,4 +16,4 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
-ThreeJs bootstraped from the [threejs journey](threejs-journey.xyz/).
+Project structure bootstraped from the [threejs journey](threejs-journey.xyz/).
